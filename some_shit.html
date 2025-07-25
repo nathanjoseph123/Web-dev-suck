@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joseph Nathan Kelvin Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
+            z-index: 1;
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+        }
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100vw;
+            min-height: 100vh;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.35;
+        }
+        header {
+            background: rgba(34,34,34,0.85);
+            padding: 2rem 1rem 1rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+            border-bottom: 2px solid #00bfff;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.7rem;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 8px #00bfff44;
+        }
+        .team-names {
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+            color: #00bfff;
+            font-weight: bold;
+        }
+        .dropdown {
+            margin: 1rem auto 0 auto;
+            display: inline-block;
+            position: relative;
+        }
+        select {
+            background: #232526;
+            color: #00bfff;
+            border: 1px solid #00bfff;
+            border-radius: 6px;
+            padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+            font-size: 1rem;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 0 2px 8px #00bfff22;
+            transition: border 0.2s;
+        }
+        select:focus {
+            border: 2px solid #00bfff;
+        }
+        main {
+            max-width: 700px;
+            margin: 2rem auto;
+            background: rgba(36,36,36,0.85);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+            backdrop-filter: blur(2px);
+        }
+        section {
+            margin-bottom: 2rem;
+            transition: opacity 0.3s;
+        }
+        h2 {
+            color: #00bfff;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 8px #00bfff22;
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(34,34,34,0.85);
+            color: #aaa;
+            border-top: 2px solid #00bfff;
+            box-shadow: 0 -2px 8px #00bfff22;
+        }
+        /* Cool neon glow effect */
+        .neon {
+            color: #00bfff;
+            text-shadow:
+                0 0 5px #00bfff,
+                0 0 10px #00bfff,
+                0 0 20px #00bfff,
+                0 0 40px #00bfff44;
+        }
+        /* Hide sections for dropdown */
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showSection() {
+            var val = document.getElementById('sectionSelect').value;
+            document.getElementById('past').classList.add('hidden');
+            document.getElementById('present').classList.add('hidden');
+            document.getElementById('future').classList.add('hidden');
+            if (val === 'all') {
+                document.getElementById('past').classList.remove('hidden');
+                document.getElementById('present').classList.remove('hidden');
+                document.getElementById('future').classList.remove('hidden');
+            } else {
+                document.getElementById(val).classList.remove('hidden');
+            }
+        }
+        window.onload = showSection;
+    </script>
+</head>
+<body>
+    <video class="video-bg" autoplay loop muted playsinline>
+        <source src="The_matrix.mp4" type="video/mp4">
+        <!-- Fallback text -->
+    </video>
+    <header>
+        <h1 class="neon">Joseph Nathan Kelvin</h1>
+        <div class="team-names">
+            Blue Team: Cyph3r &nbsp;|&nbsp; Red Team: Nullroot
+        </div>
+        <p>Linux, System Level &amp; Cybersecurity Enthusiast</p>
+        <div class="dropdown">
+            <label for="sectionSelect" style="color:#00bfff;font-weight:bold;">View:</label>
+            <select id="sectionSelect" onchange="showSection()">
+                <option value="all">All</option>
+                <option value="past">Past Achievements</option>
+                <option value="present">Present</option>
+                <option value="future">Future Goals</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <section id="past">
+            <h2>Past Achievements</h2>
+            <ul>
+                <li>Developed strong expertise in Linux and system-level operations</li>
+                <li>Built foundational skills in cybersecurity and ethical hacking</li>
+            </ul>
+        </section>
+        <section id="present">
+            <h2>Present</h2>
+            <ul>
+                <li>Red teaming at Hack Smarter</li>
+                <li>Currently working on OSCP certification</li>
+            </ul>
+        </section>
+        <section id="future">
+            <h2>Future Goals</h2>
+            <ul>
+                <li>Win DEFCON competition</li>
+                <li>Continue advancing in cybersecurity and red teaming</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Joseph Nathan Kelvin. All rights reserved.
+    </footer>
+</body>
+</html>
